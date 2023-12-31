@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+
+{% block content %}
+
+
+<main id="main">
+
+
+
+    <!-- Detail Post -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        {% if post.image %}
+            <div class="col-lg-12 mt-5 mt-lg-0">
+              <div class="row gy-2 gx-md-3">
+                <div class="form-group col-12">
+                  <a href= "https://goo.gl/maps/P49avgWvhzuy3mVGA"></a>
+                  <img src="{{ post.image.url }}" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+        {% endif %}
+            <h2>{{ post.title }}</h2>
+            <h3>{{post.created_at|timesince}} ago</h3>
+            <p>{{post.body}}</p>
+            <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}"> {{post.category }}</a></small></p>
+        
+<!--           
+            <div class="section-title">
+              <h2>Comments</h2>
+              <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+    
+                Button for submitting the form
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-success"> Add comment</button>
+                    </div>
+                </div>
+              </form>
+            </div>
+    
+            {% for comment in post.comments.all %}
+            <article class="media-box">
+            <div class="media-content">
+            <strong>{{comment.name }} <small>{{ comment.created_at |timesince }} ago</small></strong><br>
+            {{comment.body}}
+            </div>
+            </article>
+            {% endfor %}
+      
+          </div>
+       -->
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+  
+
+
+{% endblock %}
+

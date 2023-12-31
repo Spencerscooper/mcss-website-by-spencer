@@ -1,0 +1,261 @@
+{% extends "core/base.html" %}
+{%load static %}
+
+{% block content %}
+
+<!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>WELCOME to</h2>
+      <h3>Monrovia Consolidated School System
+      </h3>
+    </div>
+    <div class="row" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">All MCSS School</li>
+          <li data-filter=".filter-app">Senior</li>
+          <li data-filter=".filter-web">Junior</li>
+          <li data-filter=".filter-card">Elementary</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="300">
+      <!--Senior High Division -->
+      {% for seniorhigh_school in seniorhigh_galleries %}
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-wrap">
+          {% if seniorhigh_school.image %}
+            <img src="{{ seniorhigh_school.image.url }}" class="img-fluid" alt="">
+          {%endif %}
+          <div class="portfolio-info">
+            <h4>{{ seniorhigh_school.school_name }}</h4>
+            <p>{{ seniorhigh_school.address }}</p>
+            <div class="portfolio-links">
+            <a href="" title="Click"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!--End senior Division -->
+      {%endfor %}
+
+      <!--Junior High Division -->
+      {% for juniorhigh_school in juniorhigh_gallaries %}
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            {% if juniorhigh_school.image %}
+              <img src="{{ juniorhigh_school.image.url }}" class="img-fluid" alt="">
+            {%endif %}
+            <div class="portfolio-info">
+              <h4>{{juniorhigh_school.school_name}}</h4>
+              <p>{{juniorhigh_school.school_location}}</p>
+              <div class="portfolio-links">
+              <a href="" title="Click"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%endfor %}
+      <!--End of Junior High Division -->
+     
+
+        <!--Elementary Division -->
+        {% for elementary_school in elementary_gallaries %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              {% if elementary_school.image %}
+              <img src="{{ elementary_school.image.url }}" class="img-fluid" alt="">
+              {% endif %}
+        
+              <div class="portfolio-info">
+                <h4>{{elementary_school.school_name }}</h4>
+                <p>{{elementary_school.address }}</p>
+                <div class="portfolio-links">
+                <a href="" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <!--End of Elementary Division -->
+
+    </div>
+
+  </div>
+  </section><!--End Portfolio Section -->
+
+
+    <!-- ======= Cta Section ======= -->
+    
+    <section id="cta" class="cta">
+     
+     
+
+          <div class="container" data-aos="zoom-in">
+             
+              <h3>MCSS Updates</h3>
+              {% for post in posts %}
+              {% if post.image %}
+    
+              {% endif %}
+                  <h3>{{ post.title }}</h3>
+                  <h3>{{ post.created_at| timesince}} ago</h3>
+                  <p>{{post.body|truncatewords:60}} <a class="cta-btn" href="{% url 'post_detail' post.category.slug post.slug %}">Read more</a></p>
+          
+            {% endfor %}
+            <br>
+          </div>
+
+        
+      </section><!-- End Cta Section -->
+
+  
+<!-- ======= Portfolio Section ======= -->
+
+
+  <!-- ======= School Fees / PTA FEE Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>PTA Fees</h2>
+          <!-- <p>{{fees.message}}</p> -->
+        </div>
+
+        <div class="row">
+          {%for fee in tuition %}
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box featured">
+              <h3>{{fee.division}}</h3>
+              <h4><sup>$</sup>{{fee.tuition }}<span> / LD</span></h4>
+              <ul>
+                <br>
+              </ul>
+              <div class="btn-wrap">
+                <class="btn-buy">PTA fee for Academic {{fee.year}}</a>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+
+
+   <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+      {%for statistics in statistic %}
+        <div class="section-title">
+          {% if statistics %}
+            <h2>Enrollment Statistic </h2>
+        </div>
+          <div class="container">
+            
+            <div class="row justify-content-end">
+                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <span data-purecounter-start="0" data-purecounter-end="{{statistic.totalschool_in_num}}" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>{{statistic.totalschool_in_words}}</p>
+                  </div>
+                </div>
+          
+                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <span data-purecounter-start="0" data-purecounter-end="{{statistic.totalstudent_in_num}}" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>{{ statistic.totalstudent_in_words }}</p>
+                  </div>
+                </div>
+          
+
+                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <span data-purecounter-start="0" data-purecounter-end="{{ statistic.year_of_service_in_word }}" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>{{ statistic.year_of_service_in_num }}</p>
+                  </div>
+                </div>
+              
+          
+                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <span data-purecounter-start="0" data-purecounter-end="{{ statistic.total_alumi_in_num }}" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>{{ statistic.total_alumni_in_word  }}</p>
+                  </div>
+                </div>
+            {% else %}
+              <h3></h3>
+
+          </div>
+          {%endif %}
+
+        </div>
+        {% endfor %}
+    </section><!-- End Counts Section -->
+
+
+  <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>MCSS HONOR SOCIETY</h2>
+          <p> </p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            {%for duxs in dux %}
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{duxs.school}}  
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                {% if duxs.image %}
+                  <img src="{{ duxs.image.url }}" class="testimonial-img" alt="">
+                {% endif %}
+                <h3>{{duxs.student_name }}</h3>
+                <h4>{{duxs.school }}<br>{{duxs.year}}</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            {%endfor %}
+
+
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{}" class="testimonial-img" alt="">
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End val Section -->
+    
+
+{% endblock %}
+
+
+
+
+
+
+   
+
+

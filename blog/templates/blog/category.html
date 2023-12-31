@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+
+{% block title %} {{ category.title }} {% endblock %}
+
+
+{% block content %}
+
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+        
+            <div class="form-group col-12">
+                <img src="" class="img-fluid" alt="">
+                {% for post in posts %}
+                <div class="section-title">
+                    <h3>{{post.created_at|timesince}} ago</h3>
+                    <h4>{{post.title|truncatewords:100}}</h4>
+                    <p>{{post.body}}</p>
+                    <a class="cta-btn" href="{% url 'post_detail' post.category.slug post.slug %}">Read more</a>
+                
+                </div>
+
+                {% empty %}
+
+                <div class="content">
+                    <p>There is not post in this category...</p>
+                </div>
+
+                {% endfor %}
+            </div>
+    
+        </div>
+    </section><!-- End About Section -->
+  
+  </main><!-- End #main -->
+  
+
+
+{% endblock %}
+

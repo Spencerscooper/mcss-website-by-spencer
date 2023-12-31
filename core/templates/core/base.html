@@ -1,0 +1,166 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{%block title %}Monrovia Consolidated School System{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <!-- <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet"> -->
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+ 
+</head>
+
+
+<body>
+    <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">MCSS</a><span><img src="{% static 'assets/img/team/mcss-logo.png' %}"></span></h1>
+      
+      
+
+      <nav id="navbar" class="navbar">
+        
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'about' %}">About-MCSS</a></li> 
+          <li><a class="nav-link scrollto" href="{% url 'administration' %}">Administration</a></li> 
+          <li class="dropdown"><a href="#"><span>Our Schools</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <!-- <li><a href="#">Drop Down 1</a></li> -->
+              <li class="dropdown"><a href="#"><span>Senior High Schools</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="">William V.S. Tubman High</a></li>
+                  <li><a href="#">G.W. Gibson</a></li>
+                  <li><a href="#">D. Twe Memorial</a></li>
+                  <li><a href="#">Pipeline Senior High</a></li>
+                </ul>
+                
+              </li>
+
+              <li class="dropdown"><a href="#"><span> Junior High Schools</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Mary Brownell</a></li>
+                  <li><a href="#">Gaye Town</a></li>
+                  <li><a href="#">Maltida Newpoint</a></li>
+                  <li><a href="#">Emmanuel W. Johnson</a></li>
+                  <li><a href="#">Boatswain</a></li>
+
+                </ul>
+              </li>
+
+              <li class="dropdown"><a href="#"><span>Elementary Schools</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">A Glenn Tubman</a></li>
+                  <li><a href="#">Matadi Community</a></li>
+                  <li><a href="#">Rebecca J. Wilson</a></li>
+                  <li><a href="#">Monrovia Demonstration</a></li>
+                  <li><a href="#">Lorma Quarter</a></li>
+                  <li><a href="#">Anna F. Whisnant</a></li>
+                  <li><a href="#">C William B Brumskine</a></li>
+                  <li><a href="#">Slipway Elem.</a></li>
+                  <li><a href="#">Moses K. Weefur</a></li>
+                  <li><a href="#">Abedu Bentsi</a></li>
+                  <li><a href="#">Point Four Elem.</a></li>
+                </ul>
+                <li><a class="nav-link scrollto" href="{% url 'admin:index' %}">MCSS-Admin</a></li>
+              </li>
+              
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+    {% block content %}
+ 
+    {% endblock %}
+
+
+
+
+
+<footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>MCSS</h3>
+            <p>
+              12th Street, Sinkor<br>
+              Monrovia, Liberia <br>
+              <strong>Phone:</strong> +231 xxxx xxxx <br>
+              <strong>Email:</strong> izawolo@mcssliberia.org <br>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Monrovia Consolidated School System</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">Designed by <a href="">Spencer Cooper</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>   
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
