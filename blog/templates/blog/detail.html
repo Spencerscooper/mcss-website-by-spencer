@@ -11,9 +11,74 @@
 
 
     <!-- Detail Post -->
+    <!-- Beginning of New Insertion  -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+       
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="portfolio-details-slider swiper">
+              {% if post.image %}
+              <div class="swiper-wrapper align-items-center">
+                
+                <div class="swiper-slide">
+                  <br>
+                  <br>
+                  <img src="{{ post.image.url }}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <br>
+                  <br>
+                  <img src="{{ post.image1.url }}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <br>
+                  <br>
+                  <img src="{{ post.image1.url }}" alt="">
+                </div>
+              {% endif %}
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+      
+            <div class="portfolio-description">
+              <h2>{{post.title }}</h2>
+              <h2>{{post.created_at|timesince}} ago</h2>
+              <p>
+                {{post.body}}
+              </p>
+              <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}"> {{post.category }}</a></small></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- end new insertion here -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <!-- <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
         {% if post.image %}
             <div class="col-lg-12 mt-5 mt-lg-0">
@@ -29,7 +94,7 @@
             <h3>{{post.created_at|timesince}} ago</h3>
             <p>{{post.body}}</p>
             <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}"> {{post.category }}</a></small></p>
-        
+         -->
 <!--           
             <div class="section-title">
               <h2>Comments</h2>

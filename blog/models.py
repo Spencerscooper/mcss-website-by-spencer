@@ -34,6 +34,8 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10, choices=CHOICES_STATUS, default=ACTIVE)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    image1 = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    image2 = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
     class Meta:
         ordering = ('-created_at',)
