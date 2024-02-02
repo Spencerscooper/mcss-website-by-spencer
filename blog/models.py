@@ -139,6 +139,9 @@ class Sr_Management(models.Model):
     position = models.CharField(max_length=40)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 class Council(models.Model):
     name = models.CharField(max_length=40)
     position = models.CharField(max_length=40)
