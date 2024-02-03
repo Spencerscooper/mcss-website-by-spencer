@@ -149,54 +149,44 @@
 
 
 
-   <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
-      {%for statistics in statistic %}
-        <div class="section-title">
-          {% if statistics %}
-            <h2>Enrollment Statistic </h2>
-        </div>
-          <div class="container">
-            
-            <div class="row justify-content-end">
-                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <span data-purecounter-start="0" data-purecounter-end="{{statistic.totalschool_in_num}}" data-purecounter-duration="2" class="purecounter"></span>
-                    <p>{{statistic.totalschool_in_words}}</p>
-                  </div>
-                </div>
-          
-                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <span data-purecounter-start="0" data-purecounter-end="{{statistic.totalstudent_in_num}}" data-purecounter-duration="2" class="purecounter"></span>
-                    <p>{{ statistic.totalstudent_in_words }}</p>
-                  </div>
-                </div>
-          
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts section-bg">
+    <div class="container">
 
-                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <span data-purecounter-start="0" data-purecounter-end="{{ statistic.year_of_service_in_word }}" data-purecounter-duration="2" class="purecounter"></span>
-                    <p>{{ statistic.year_of_service_in_num }}</p>
-                  </div>
-                </div>
-              
-          
-                <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <span data-purecounter-start="0" data-purecounter-end="{{ statistic.total_alumi_in_num }}" data-purecounter-duration="2" class="purecounter"></span>
-                    <p>{{ statistic.total_alumni_in_word  }}</p>
-                  </div>
-                </div>
-            {% else %}
-              <h3></h3>
+      <div class="row justify-content-end">
 
+        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="2" class="purecounter"></span>
+            <p>Twenty Four Schools</p>
           </div>
-          {%endif %}
-
         </div>
-        {% endfor %}
-    </section><!-- End Counts Section -->
+
+        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <span data-purecounter-start="0" data-purecounter-end="21410" data-purecounter-duration="2" class="purecounter"></span>
+            <p>Students for Academic 2022/2023</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <span data-purecounter-start="0" data-purecounter-end="55" data-purecounter-duration="2" class="purecounter"></span>
+            <p>Fifty Five Years of National Service</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <span data-purecounter-start="0" data-purecounter-end="40000" data-purecounter-duration="2" class="purecounter"></span>
+            <p>Over Forty Thousand Alumni</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
 
 
   <!-- ======= Testimonials Section ======= -->
