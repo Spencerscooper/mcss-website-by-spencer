@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>William V.S. Tubman High</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+ 
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'schoolassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'schoolassets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'schoolassets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'schoolassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'schoolassets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'schoolassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'schoolassets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'schoolassets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'schoolassets/css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="">Tubman High</a></h1>
+     
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="active" href="{%url 'tubmanhigh_index' %}">Home</a></li>
+          <li><a href="{%url 'tubmanhigh_about' %}">About</a></li>
+          <li><a href="{%url 'tubmanhigh_event' %}">Events</a></li>
+          <li><a href="{%url 'about' %}">MCSS</a></li>
+         
+
+         
+
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="" class="get-started-btn">Login</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Welcome To William V.S.<br>Tubman High School</h1>
+      <h2>12th Street, Sinkor, <br>Monrovia, Liberia</h2>
+    </div>
+  </section>
+{% block content %}
+
+
+  {% endblock %}
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Contact</h3>
+            <p>
+              12th Street, Street <br>
+              Monrovia-Libera<br>
+               <br><br>
+              <strong>Phone:</strong> +231<br>
+              <strong>Email:</strong> info@<br>
+            </p>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Tubman High</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+    
+
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+      <div>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'schoolassets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'schoolassets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'schoolassets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'schoolassets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'schoolassets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'schoolassets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 # core views.py with contain the function base view for my front pages
 from django.http import HttpResponse
 from django.shortcuts import render
-from blog.models import Post, Elementary_Galleries, JuniorHigh_Galleries, SeniorHigh_Galleries,School_fee, Honor_roll, Statistics, Aboutmcss, Formersups, Supe_goal, About_sup, Sr_Management, Council
+from blog.models import Post, Elementary_Galleries, JuniorHigh_Galleries, SeniorHigh_Galleries,School_fee, Honor_roll, Statistics, Aboutmcss, Formersups, Supe_goal, About_sup, Sr_Management, Council, tubmanhigh_admin
 from django.core.paginator import Paginator
 # Create your views here.
 
@@ -34,6 +34,24 @@ def administration(request):
     faculty = Sr_Management.objects.all()
     council = Council.objects.all()
     return render(request, 'core/administration.html', {'faculty': faculty, 'council': council })
+
+#This section is for William V.S. Tubman High School 
+def tubmanhigh_index(request):
+ 
+    return render(request, 'core/Tubmanhigh/index.html',) 
+
+def tubmanhigh_about(request):
+    tubman_admin = tubmanhigh_admin.objects.all()
+ 
+    return render(request, 'core/Tubmanhigh/about.html',{'tubman_admin': tubman_admin })
+
+def tubmanhigh_event(request):
+ 
+    return render(request, 'core/Tubmanhigh/events.html',)
+
+#This end
+
+
 
 def robots_txt(request):
     text = [

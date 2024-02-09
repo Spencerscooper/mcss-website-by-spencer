@@ -122,7 +122,9 @@ class Formersups(models.Model):
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
     def __str__(self):
-        return self.name 
+        return f"{self.name}" 
+    
+   
 
 class Supe_goal(models.Model):
     title = models.CharField(max_length=300)
@@ -140,12 +142,21 @@ class Sr_Management(models.Model):
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
 
 class Council(models.Model):
     name = models.CharField(max_length=40)
     position = models.CharField(max_length=40)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
+
+#This section for William V.S. Tubman High School
+class tubmanhigh_admin(models.Model):
+    name = models.CharField(max_length=40)
+    position = models.CharField(max_length=40)
+    image = models.ImageField(upload_to='uploads/', blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 
