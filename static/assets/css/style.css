@@ -13,6 +13,10 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
+.address .blog_login h4{
+  color: red;
+
+}
 
 a {
   color: #2487ce;
@@ -32,6 +36,7 @@ h5,
 h6{
   font-family: "Raleway", sans-serif;
 }
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -1603,7 +1608,7 @@ section {
   color: #fff;
   background: #ed3c0d;
   text-align: left;
-  padding: 15px;
+  padding: 10px;
   font-weight: 600;
 }
 

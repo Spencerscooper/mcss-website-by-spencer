@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 
 def frontpage(request):
     posts = Post.objects.filter(status=Post.ACTIVE)
-    paginator = Paginator(posts,3)
+    paginator = Paginator(posts,4)
     page_number = request.GET.get('page')
     post_obj = paginator.get_page(page_number)
 
@@ -37,8 +37,11 @@ def administration(request):
 
 #This section is for William V.S. Tubman High School 
 def tubmanhigh_index(request):
+    tubman_admin = tubmanhigh_admin.objects.all()
  
-    return render(request, 'core/Tubmanhigh/index.html',) 
+    return render(request, 'core/Tubmanhigh/index.html',{'tubman_admin': tubman_admin })
+
+
 
 def tubmanhigh_about(request):
     tubman_admin = tubmanhigh_admin.objects.all()

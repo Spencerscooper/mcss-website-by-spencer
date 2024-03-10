@@ -1,0 +1,76 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+
+
+      <div class="row mt-5">
+
+        <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <h4>Signup To Have an Account</h4>
+                {% for message in messages %}
+                <h3>{{ message}}</h3>
+                {% endfor %}
+        
+                <h4></h4>
+                <p></p>
+              </div>
+
+              <div class="email">
+              
+                <h4></h4>
+                <p></p>
+              </div>
+
+              <div class="phone">
+             
+    
+              </div>
+
+            </div>
+
+          </div>
+
+     
+        <div class="col-lg-8 mt-5 mt-lg-0">
+         
+          <form action="blog_signup" method="POST">
+            {% csrf_token %}
+            <div class="row gy-2 gx-md-3">
+              <div class="col-md-6 form-group">
+                <input type="text" name="username" class="form-control"  placeholder="Enter User Name" required>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <input type="email" class="form-control" name="email"  placeholder="Your Email" required>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <input type="password" name="password" class="form-control"  placeholder="Enter password" required>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <input type="password" class="form-control" name="password2"  placeholder="Confirmed Password" required>
+              </div>
+
+
+              <div class="text-center col-12"><button type="submit">Submit</button></div>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}

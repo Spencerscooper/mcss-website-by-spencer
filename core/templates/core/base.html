@@ -43,54 +43,62 @@
       
 
       <nav id="navbar" class="navbar">
-        
+    
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="{% url 'admin:index' %}">MCSS-Admin</a></li>
+          <!-- <li><a class="getstarted scrollto" href="{% url 'blog_signup' %}">Signup</a></li>   -->
+          <li><a class="getstarted scrollto" href="{% url 'blog_logout' %}">Logout</a></li>    <strong>Welcome {{user.username }} </strong>
+          
+          {% else %}
           <li><a class="nav-link scrollto" href="{% url 'about' %}">About-MCSS</a></li> 
-          <li><a class="nav-link scrollto" href="{% url 'administration' %}">Administration</a></li> 
-          <li class="dropdown"><a href="#"><span>Our Schools</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <!-- <li><a href="#">Drop Down 1</a></li> -->
-              <li class="dropdown"><a href="#"><span>Senior High Schools</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="{% url 'tubmanhigh_index' %}">William V.S. Tubman High</a></li>
-                  <li><a href="#">G.W. Gibson</a></li>
-                  <li><a href="#">D. Twe Memorial</a></li>
-                  <li><a href="#">Pipeline Senior High</a></li>
-                </ul>
+          <li><a class="nav-link scrollto" href="{% url 'administration' %}">Administration</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'blog_login' %}">Login</a></li>
+              <li class="dropdown"><a href="#"><span>Our Schools</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <!-- <li><a href="#">Drop Down 1</a></li> -->
+                <li class="dropdown"><a href="#"><span>Senior High Schools</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="{% url 'tubmanhigh_index' %}">William V.S. Tubman High</a></li>
+                    <li><a href="#">G.W. Gibson</a></li>
+                    <li><a href="#">D. Twe Memorial</a></li>
+                    <li><a href="#">Pipeline Senior High</a></li>
+                  </ul>
+                  
+                </li>
+
+                <li class="dropdown"><a href="#"><span> Junior High Schools</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="#">Mary Brownell</a></li>
+                    <li><a href="#">Gaye Town</a></li>
+                    <li><a href="#">Maltida Newpoint</a></li>
+                    <li><a href="#">Emmanuel W. Johnson</a></li>
+                    <li><a href="#">Boatswain</a></li>
+
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Elementary Schools</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="#">A Glenn Tubman</a></li>
+                    <li><a href="#">Matadi Community</a></li>
+                    <li><a href="#">Rebecca J. Wilson</a></li>
+                    <li><a href="#">Monrovia Demonstration</a></li>
+                    <li><a href="#">Lorma Quarter</a></li>
+                    <li><a href="#">Anna F. Whisnant</a></li>
+                    <li><a href="#">C William B Brumskine</a></li>
+                    <li><a href="#">Slipway Elem.</a></li>
+                    <li><a href="#">Moses K. Weefur</a></li>
+                    <li><a href="#">Abedu Bentsi</a></li>
+                    <li><a href="#">Point Four Elem.</a></li>
+                  </ul>
                 
-              </li>
-
-              <li class="dropdown"><a href="#"><span> Junior High Schools</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Mary Brownell</a></li>
-                  <li><a href="#">Gaye Town</a></li>
-                  <li><a href="#">Maltida Newpoint</a></li>
-                  <li><a href="#">Emmanuel W. Johnson</a></li>
-                  <li><a href="#">Boatswain</a></li>
-
-                </ul>
-              </li>
-
-              <li class="dropdown"><a href="#"><span>Elementary Schools</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">A Glenn Tubman</a></li>
-                  <li><a href="#">Matadi Community</a></li>
-                  <li><a href="#">Rebecca J. Wilson</a></li>
-                  <li><a href="#">Monrovia Demonstration</a></li>
-                  <li><a href="#">Lorma Quarter</a></li>
-                  <li><a href="#">Anna F. Whisnant</a></li>
-                  <li><a href="#">C William B Brumskine</a></li>
-                  <li><a href="#">Slipway Elem.</a></li>
-                  <li><a href="#">Moses K. Weefur</a></li>
-                  <li><a href="#">Abedu Bentsi</a></li>
-                  <li><a href="#">Point Four Elem.</a></li>
-                </ul>
-                <li><a class="nav-link scrollto" href="{% url 'admin:index' %}">MCSS-Admin</a></li>
-              </li>
-              
-            </ul>
-          </li>
+                </li>
+                
+              </ul>
+            </li>
+            {%endif%} 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -128,6 +136,7 @@
         </div>
       </div>
     </div>
+
 
     <div class="container d-md-flex py-4">
 

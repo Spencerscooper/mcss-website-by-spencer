@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -41,7 +42,7 @@ class Post(models.Model):
         ordering = ('-created_at',)
     
     def __str__(self):
-        return self.title
+        return self.title + "\n" + self.body
     
     def get_absolute_url(self):
         return '/%s/%s/' % (self.category.slug, self.slug)
